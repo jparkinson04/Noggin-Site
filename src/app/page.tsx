@@ -13,7 +13,9 @@ import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
 import Band, { BandGap } from "@/components/Band";
 
-// Rhythm: dark hero → light → dark (purple quiz panel) → light → dark close.
+// Rhythm: light sheets alternate with the dark ground so the page flows.
+// hero (dark) → poll (light) → how it works (dark) → brain map (light)
+// → quiz, studio, origin, privacy (dark) → pricing, FAQ (light) → waitlist (dark)
 export default function Home() {
   return (
     <>
@@ -22,7 +24,10 @@ export default function Home() {
         <Hero />
         <Band>
           <PollRow />
-          <HowItWorks />
+        </Band>
+        <BandGap />
+        <HowItWorks />
+        <Band>
           <Regions />
         </Band>
         <BandGap />

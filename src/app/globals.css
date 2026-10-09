@@ -1,5 +1,8 @@
 /* Noggin design tokens — the dark direction. Keep the site and the app in sync. */
-:root {
+/* Dark tokens. .theme-dark re-applies them inside a light section
+   (product illustrations, the brain panel). */
+:root,
+.theme-dark {
   --ground: #0b0c0e;
   --surface: #121419;
   --surface-sunk: #0f1115;
@@ -79,6 +82,8 @@ a { color: var(--accent-text); }
 a:hover { color: var(--link-hover); }
 
 :focus-visible { outline: 2px solid var(--accent-focus); outline-offset: 3px; }
+
+.theme-dark { color: var(--text); }
 
 /* Light sections. Redefines the tokens locally so every component inside
    adapts without its own light styles. */
