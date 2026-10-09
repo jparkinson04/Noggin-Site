@@ -11,6 +11,10 @@ const faqs = [
     a: "Not on its own. You approve every post. Scheduling straight to LinkedIn is coming, and even then nothing goes out without your say.",
   },
   {
+    q: "Who sees what I tell it?",
+    a: "Nobody, until you choose to post. Anything you tell Noggin stays in your noggin, and stories involving someone else get flagged so you decide whether they’re in.",
+  },
+  {
     q: "Is it safe for my LinkedIn account?",
     a: "Noggin will only ever connect through LinkedIn’s official API. No cookies, no browser extensions.",
   },
