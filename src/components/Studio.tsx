@@ -39,9 +39,27 @@ export default function Studio() {
             </li>
           ))}
         </ul>
+        {/*
+          SAMPLE: an invented quote, shown with a visible "Sample quote" label.
+          "Alfie Z, AFZ Labs" is a made-up name, not a client. Keep the label
+          until this is swapped for a real, permissioned client quote.
+        */}
         <figure className={styles.quote}>
-          <blockquote className={styles.quoteText}>[CLIENT QUOTE, used with permission]</blockquote>
-          <figcaption className={styles.quoteBy}>[Client name, role, company]</figcaption>
+          <blockquote className={styles.bubble}>
+            <span className={styles.sample}>Sample quote</span>
+            <p>
+              “I had years of client stories and never posted one, because none of it felt like
+              content. Noggin got them out of my head in three short sittings, and the first draft
+              sounded more like me than anything I’d written myself.”
+            </p>
+          </blockquote>
+          <figcaption className={styles.by}>
+            <span className={styles.avatar} aria-hidden="true">AZ</span>
+            <span>
+              <span className={styles.name}>Alfie Z</span>
+              <span className={styles.company}>AFZ Labs</span>
+            </span>
+          </figcaption>
         </figure>
       </div>
     </section>
