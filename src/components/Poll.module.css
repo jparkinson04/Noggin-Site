@@ -1,25 +1,25 @@
-.section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--gutter) 112px;
-}
-
 .panel {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-panel);
-  padding: clamp(28px, 5vw, 56px);
+  padding: clamp(24px, 4vw, 44px);
   display: flex;
-  flex-wrap: wrap;
-  gap: 48px;
+  flex-direction: column;
+  gap: 28px;
+  box-shadow: 0 1px 2px rgba(17, 18, 22, 0.04), 0 12px 32px -12px rgba(17, 18, 22, 0.12);
 }
 
 .copy {
-  flex: 1 1 320px;
-  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+}
+
+.question {
+  font-weight: 700;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
 }
 
 .live {
@@ -47,8 +47,6 @@
 }
 
 .options {
-  flex: 1.3 1 440px;
-  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -56,15 +54,15 @@
 
 .option {
   font: inherit;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   color: var(--text);
   text-align: left;
   background: var(--surface-sunk);
   border: 1px solid var(--line-option);
   border-radius: 16px;
-  padding: 18px 22px;
-  min-height: 60px;
+  padding: 15px 20px;
+  min-height: 54px;
   cursor: pointer;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
@@ -95,10 +93,10 @@
   left: 0;
   top: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.06);
+  background: color-mix(in srgb, var(--text) 7%, transparent);
   transition: width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.rowMine .bar { background: rgba(51, 102, 240, 0.38); }
+.rowMine .bar { background: color-mix(in srgb, var(--accent) 22%, transparent); }
 
 .rowInner {
   position: relative;

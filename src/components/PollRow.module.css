@@ -1,0 +1,16 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(40px, 6vw, 88px);
+}
+
+.poll {
+  flex: 1.1 1 400px;
+  min-width: 0;
+}
+
+.why {
+  flex: 1 1 360px;
+  min-width: 0;
+}

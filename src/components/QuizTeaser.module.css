@@ -1,8 +1,8 @@
 .panel {
   border-radius: var(--radius-panel);
   padding: clamp(28px, 5vw, 56px);
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--accent);
+  color: #fff;
   display: flex;
   flex-direction: column;
   gap: 36px;
@@ -23,7 +23,7 @@
   max-width: 620px;
 }
 
-.eyebrow { color: var(--accent-on-paper); }
+.eyebrow { color: #fff; opacity: 0.9; }
 
 .h2 {
   font-weight: 700;
@@ -35,10 +35,9 @@
 .lede {
   margin: 0;
   font-size: 18px;
-  color: var(--ink-muted);
+  color: #fff;
 }
 
-.cta { padding: 16px 28px; }
 
 .grid {
   display: grid;
@@ -48,6 +47,7 @@
 
 .engine {
   background: #fff;
+  color: var(--ink);
   border-radius: 18px;
   padding: 22px;
   display: flex;

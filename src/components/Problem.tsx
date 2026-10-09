@@ -2,16 +2,13 @@ import styles from "./Problem.module.css";
 
 export default function Problem() {
   return (
-    <section className={styles.section}>
-      <h2 className={styles.h2}>
-        The polished posts get a polite trickle. The honest one gets the comments.
-      </h2>
+    <div className={styles.why}>
+      <h2 className={styles.h2}>If AI could have written it, why would anyone read it?</h2>
       <p className={styles.body}>
-        You’ve probably seen it. The post you smoothed out with AI gets a few likes from
-        people you already know. The one you wrote quickly, about something that actually
-        happened, gets people replying with their own version. Noggin is built around that
-        second kind of post.
+        Everyone has the same tools now, so everyone’s starting to sound the same. The one thing
+        nobody can generate is what’s actually happened to you.{" "}
+        <span className={styles.close}>Noggin starts there.</span>
       </p>
-    </section>
+    </div>
   );
 }

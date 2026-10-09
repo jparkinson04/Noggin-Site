@@ -13,25 +13,23 @@ const options = [
 
 export default function Poll() {
   return (
-    <section id="poll" className={styles.section}>
-      <div className={styles.panel}>
-        <div className={styles.copy}>
-          <p className={`${shared.eyebrow} ${styles.live}`}>
-            <span className={styles.liveDot} />
-            Live poll, this week
-          </p>
-          <h2 className={shared.h2}>What stops you posting on LinkedIn?</h2>
-          <p className={styles.lede}>One tap, completely anonymous. Vote to see what everyone else said.</p>
-        </div>
-
-        <div className={styles.options}>
-          {options.map((o) => (
-            <button key={o.id} type="button" className={styles.option}>
-              {o.label}
-            </button>
-          ))}
-        </div>
+    <div id="poll" className={styles.panel}>
+      <div className={styles.copy}>
+        <p className={`${shared.eyebrow} ${styles.live}`}>
+          <span className={styles.liveDot} />
+          Live poll, this week
+        </p>
+        <h2 className={styles.question}>What stops you posting on LinkedIn?</h2>
+        <p className={styles.lede}>One tap, completely anonymous. Vote to see what everyone else said.</p>
       </div>
-    </section>
+
+      <div className={styles.options}>
+        {options.map((o) => (
+          <button key={o.id} type="button" className={styles.option}>
+            {o.label}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }

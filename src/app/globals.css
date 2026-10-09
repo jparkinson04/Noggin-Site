@@ -10,13 +10,15 @@
   --text-muted: #b4b7bf;
   --text-faint: #8a8e98;
 
-  --accent: #3366f0;
-  --accent-hover: #2552d6;
-  --accent-text: #8fb0ff;
-  --accent-wash: #16203a;
-  --accent-wash-line: #263459;
+  /* One accent for every action: the brand purple-blue from the logo. */
+  --accent: #4a5bff;
+  --accent-hover: #3a49e6;
+  --accent-text: #a3adff;      /* eyebrows and links on dark */
+  --accent-wash: #1b1e3f;
+  --accent-wash-line: #2d3372;
+  --link-hover: #c9ceff;
 
-  --paper: #f2f1ee;      /* the one light panel (quiz teaser, result side card) */
+  --paper: #f0f1f6;      /* the light sections: a cool off-white with a hint of the brand */
   --ink: #111216;
   --ink-muted: #3f424a;
 
@@ -39,10 +41,10 @@
   --line-dashed: #3a3f4a;     /* placeholder quote card */
   --line-label: #262a32;      /* brain label pill border */
   --surface-hover: #161a24;   /* poll option hover */
-  --accent-focus: #7ea2ff;    /* focus ring, ticks, FAQ plus */
-  --accent-on-paper: #2a55cc; /* eyebrow on the light panel */
-  --accent-wash-text: #e8edfb;
-  --accent-wash-muted: #c9d3ee;
+  --accent-focus: #8f9aff;    /* focus ring, ticks, FAQ plus */
+  --accent-on-paper: #3a47d9; /* accent text on light sections */
+  --accent-wash-text: #e8eaff;
+  --accent-wash-muted: #c9cdf2;
 
   --radius-card: 22px;
   --radius-panel: 28px;
@@ -74,9 +76,36 @@ h1, h2, h3 {
 }
 
 a { color: var(--accent-text); }
-a:hover { color: #b7ccff; }
+a:hover { color: var(--link-hover); }
 
 :focus-visible { outline: 2px solid var(--accent-focus); outline-offset: 3px; }
+
+/* Light sections. Redefines the tokens locally so every component inside
+   adapts without its own light styles. */
+.theme-light {
+  --text: var(--ink);
+  --text-strong: #23252b;
+  --text-muted: var(--ink-muted);
+  --text-faint: #62656e;
+  --text-list: #2f3238;
+  --surface: #ffffff;
+  --surface-sunk: #f7f7fa;
+  --surface-hover: #f1f2ff;
+  --line: #dfe1ea;
+  --line-strong: #c9ccd8;
+  --line-option: #dadce6;
+  --line-ghost-hover: #8e92a1;
+  --line-dashed: #b9bdcb;
+  --accent-text: var(--accent-on-paper);
+  --accent-focus: var(--accent-on-paper);
+  --link-hover: var(--ink);
+  --accent-wash: #e9ebff;
+  --accent-wash-line: #c9cefc;
+  --accent-wash-text: var(--ink);
+  --accent-wash-muted: var(--ink-muted);
+  background: var(--paper);
+  color: var(--text);
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

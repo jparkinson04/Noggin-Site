@@ -1,0 +1,12 @@
+/* A full-width light sheet laid over the dark ground. Rounded ends instead of
+   hard edges, so the page flows dark → light → dark without a gradient. */
+.light {
+  border-radius: clamp(28px, 4vw, 56px);
+  padding-top: clamp(64px, 9vw, 112px);
+  /* sections inside keep their own bottom padding */
+}
+
+.light + .gap,
+.gap {
+  height: clamp(64px, 9vw, 112px);
+}

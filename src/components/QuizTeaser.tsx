@@ -21,7 +21,7 @@ export default function QuizTeaser() {
               minutes, and you’ll know which is yours. No email needed.
             </p>
           </div>
-          <a href="/quiz" className={`${shared.btnPrimary} ${styles.cta}`}>Find my engine</a>
+          <a href="/quiz" className={shared.btnInverse}>Find my engine</a>
         </div>
         <div className={styles.grid}>
           {engines.map((e) => (

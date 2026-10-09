@@ -87,7 +87,7 @@
 }
 .btnGhost:hover {
   border-color: var(--line-ghost-hover);
-  color: #fff;
+  color: var(--text);
 }
 
 .btnSmall {
@@ -99,4 +99,25 @@
 .textLink {
   font-weight: 600;
   text-decoration: none;
+}
+
+/* White button for use on the purple panel. */
+.btnInverse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  background: #fff;
+  color: var(--accent-on-paper);
+  padding: 16px 28px;
+  min-height: 52px;
+  transition: background 0.15s ease;
+}
+.btnInverse:hover {
+  background: var(--paper);
+  color: var(--accent-on-paper);
 }
