@@ -1,0 +1,19 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 2px solid var(--accent);
+  padding-top: 20px;
+}

@@ -1,0 +1,13 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.logo svg { display: block; }
+
+/* logo-dark.svg uses #ecebe6 ("chalk") for the letters; --text is the site's equivalent. */
+.letters { fill: var(--text); }
+.brain { fill: var(--brand); }

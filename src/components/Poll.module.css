@@ -1,0 +1,137 @@
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 112px;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-panel);
+  padding: clamp(28px, 5vw, 56px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.copy {
+  flex: 1 1 320px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.liveDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--region-receipts);
+}
+
+.lede {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.count {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-faint);
+}
+
+.options {
+  flex: 1.3 1 440px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option {
+  font: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  text-align: left;
+  background: var(--surface-sunk);
+  border: 1px solid var(--line-option);
+  border-radius: 16px;
+  padding: 18px 22px;
+  min-height: 60px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.option:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover);
+}
+
+/* Results state (wired up in step 3) */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.row {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line-option);
+  background: var(--surface-sunk);
+  min-height: 60px;
+}
+.rowMine { border-color: var(--accent); }
+
+.bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.06);
+  transition: width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.rowMine .bar { background: rgba(51, 102, 240, 0.38); }
+
+.rowInner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+}
+
+.rowLabel { font-size: 17px; font-weight: 400; }
+.rowMine .rowLabel { font-weight: 600; }
+
+.pct {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.reply {
+  margin-top: 10px;
+  padding: 22px 24px;
+  border-radius: 18px;
+  background: var(--accent-wash);
+  border: 1px solid var(--accent-wash-line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.replyText {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--accent-wash-text);
+}

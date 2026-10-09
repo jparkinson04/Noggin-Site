@@ -1,0 +1,51 @@
+/* Full-bleed so the dot field covers the whole hero; the copy sits centred on top. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 64px var(--gutter) 96px;
+  min-height: clamp(560px, 80vh, 800px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy {
+  max-width: 640px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.mark {
+  width: clamp(80px, 12vw, 120px);
+  height: auto;
+  margin-bottom: 4px;
+}
+
+.h1 {
+  font-weight: 700;
+  font-size: clamp(40px, 5.6vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.lede {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 520px;
+}
+
+.cta { margin-top: 8px; }

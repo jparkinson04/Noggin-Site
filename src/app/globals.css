@@ -1,0 +1,84 @@
+/* Noggin design tokens — the dark direction. Keep the site and the app in sync. */
+:root {
+  --ground: #0b0c0e;
+  --surface: #121419;
+  --surface-sunk: #0f1115;
+  --line: #22252c;
+  --line-strong: #343843;
+
+  --text: #f2f1ee;
+  --text-muted: #b4b7bf;
+  --text-faint: #8a8e98;
+
+  --accent: #3366f0;
+  --accent-hover: #2552d6;
+  --accent-text: #8fb0ff;
+  --accent-wash: #16203a;
+  --accent-wash-line: #263459;
+
+  --paper: #f2f1ee;      /* the one light panel (quiz teaser, result side card) */
+  --ink: #111216;
+  --ink-muted: #3f424a;
+
+  /* The logo's own purple-blue (matches the app's `brand` token). Logo ONLY. */
+  --brand: #4a5bff;
+
+  /* Brain regions — used ONLY on the brain and region keys */
+  --region-whys: #f2c14e;
+  --region-stories: #f08a5d;
+  --region-opinions: #e5607a;
+  --region-personality: #a68bf0;
+  --region-receipts: #4fc9a8;
+
+  /* Extra tones used by the landing mockup */
+  --text-strong: #e4e5e8;     /* ghost button text, labels, quote */
+  --text-list: #d6d8dd;       /* pricing list */
+  --line-soft: #1c1f25;       /* footer rule */
+  --line-option: #2a2e36;     /* poll option border */
+  --line-ghost-hover: #5a5f6b;
+  --line-dashed: #3a3f4a;     /* placeholder quote card */
+  --line-label: #262a32;      /* brain label pill border */
+  --surface-hover: #161a24;   /* poll option hover */
+  --accent-focus: #7ea2ff;    /* focus ring, ticks, FAQ plus */
+  --accent-on-paper: #2a55cc; /* eyebrow on the light panel */
+  --accent-wash-text: #e8edfb;
+  --accent-wash-muted: #c9d3ee;
+
+  --radius-card: 22px;
+  --radius-panel: 28px;
+  --radius-pill: 999px;
+
+  --max-width: 1200px;
+  --gutter: 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+a { color: var(--accent-text); }
+a:hover { color: #b7ccff; }
+
+:focus-visible { outline: 2px solid var(--accent-focus); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

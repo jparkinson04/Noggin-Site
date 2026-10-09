@@ -1,0 +1,102 @@
+/* Patterns shared by several landing sections. Tokens live in globals.css. */
+
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 128px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 680px;
+}
+
+.h2 {
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.h3 {
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+.muted {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btnPrimary,
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btnPrimary {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  border: 0;
+  padding: 16px 26px;
+  min-height: 52px;
+}
+.btnPrimary:hover {
+  background: var(--accent-hover);
+  color: #fff;
+}
+
+.btnGhost {
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--text-strong);
+  font-weight: 500;
+  padding: 16px 24px;
+  min-height: 52px;
+}
+.btnGhost:hover {
+  border-color: var(--line-ghost-hover);
+  color: #fff;
+}
+
+.btnSmall {
+  font-size: inherit;
+  padding: 14px 24px;
+  min-height: 48px;
+}
+
+.textLink {
+  font-weight: 600;
+  text-decoration: none;
+}

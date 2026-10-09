@@ -1,0 +1,94 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.plan {
+  border-radius: 24px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.solo {
+  background: var(--surface);
+  border: 1px solid var(--accent);
+}
+
+.teams {
+  background: var(--surface-sunk);
+  border: 1px solid var(--line);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.price {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.amount {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.per { color: var(--text-muted); }
+
+.founding {
+  margin: 0;
+  font-size: 15px;
+  color: var(--accent-text);
+}
+
+.later {
+  margin: 0;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--text-muted);
+}
+
+.features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text-list);
+  font-size: 16px;
+}
+
+.feature {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.tick { color: var(--accent-focus); }
+
+.cta { align-self: flex-start; }

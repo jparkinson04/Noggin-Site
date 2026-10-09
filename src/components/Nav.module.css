@@ -1,0 +1,33 @@
+.header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+  font-size: 15px;
+}
+
+.link {
+  color: var(--text-muted);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.link:hover { color: var(--text); }
+
+.cta {
+  font-size: 15px;
+  padding: 12px 20px;
+  min-height: 44px;
+}

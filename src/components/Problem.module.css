@@ -1,0 +1,24 @@
+.section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+  align-items: center;
+}
+
+.h2 {
+  font-weight: 700;
+  font-size: clamp(34px, 4.6vw, 56px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
+.body {
+  margin: 0;
+  font-size: 19px;
+  color: var(--text-muted);
+  max-width: 680px;
+}
