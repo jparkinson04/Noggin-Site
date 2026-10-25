@@ -73,9 +73,8 @@
 .row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px 32px;
-  align-items: center;
-  padding: 24px 0;
+  gap: 10px;
+  padding: 16px 0;
   border-top: 1px solid var(--line);
 }
 .list li:last-child { border-bottom: 1px solid var(--line); }
@@ -88,7 +87,7 @@
   background: none;
   border: 0;
   border-radius: 12px;
-  padding: 8px 12px;
+  padding: 6px 12px;
   margin: 0 -12px;
   min-height: 44px;
   display: flex;
@@ -112,22 +111,23 @@
 
 .text {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 14px;
   flex: 1;
   min-width: 0;
 }
 
 .name {
   font-weight: 600;
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .line {
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /* The example card: white, the card border and radius, a bar in the region colour. */
@@ -139,14 +139,14 @@
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-card);
-  padding: 18px 22px;
+  padding: 14px 18px;
 }
 .bar { flex: none; width: 3px; border-radius: 2px; }
 .exampleText { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .quote {
   margin: 0;
   font-style: italic;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   color: var(--text);
 }
@@ -158,11 +158,15 @@
 
 @media (min-width: 900px) {
   .section {
-    grid-template-columns: 1fr 1.05fr;
-    grid-template-areas: "head brain" "list list";
-    grid-template-rows: auto auto;
+    grid-template-columns: 1.1fr 1fr;
+    grid-template-areas: "head brain" "list brain";
+    grid-template-rows: auto 1fr;
     column-gap: clamp(40px, 6vw, 80px);
-    row-gap: 48px;
+    row-gap: 28px;
   }
-  .row { grid-template-columns: 5fr 7fr; }
+  .brainPanel {
+    align-self: start;
+    position: sticky;
+    top: 24px;
+  }
 }

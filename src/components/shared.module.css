@@ -3,7 +3,7 @@
 .section {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--gutter) 128px;
+  padding: 0 var(--gutter) clamp(72px, 8vw, 96px);
 }
 
 .eyebrow {

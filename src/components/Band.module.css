@@ -2,11 +2,11 @@
    hard edges, so the page flows dark → light → dark without a gradient. */
 .light {
   border-radius: clamp(28px, 4vw, 56px);
-  padding-top: clamp(64px, 9vw, 112px);
+  padding-top: clamp(56px, 7vw, 88px);
   /* sections inside keep their own bottom padding */
 }
 
 .light + .gap,
 .gap {
-  height: clamp(64px, 9vw, 112px);
+  height: clamp(48px, 6vw, 72px);
 }
