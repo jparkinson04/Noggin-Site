@@ -1,7 +1,7 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: clamp(40px, 5vw, 56px);
+  gap: clamp(48px, 7vw, 80px);
 }
 
 .intro {
@@ -32,9 +32,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(40px, 6vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(56px, 8vw, 96px);
 }
 
 /* Text then visual on mobile; side by side and alternating from 900px. */
@@ -87,17 +87,11 @@
 
 .visual { min-width: 0; }
 
-/* From 900px the four steps sit two by two, text above picture, so the whole
-   method fits in a couple of screens instead of four. */
 @media (min-width: 900px) {
-  .steps {
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(40px, 5vw, 64px) clamp(32px, 4vw, 56px);
-  }
   .step {
-    grid-template-columns: 1fr;
-    align-content: start;
-    gap: 20px;
+    grid-template-columns: 1fr 1.15fr;
+    gap: clamp(48px, 6vw, 88px);
   }
-  .text { max-width: none; }
+  .step:nth-child(even) .text { order: 2; }
+  .step:nth-child(even) .visual { order: 1; }
 }
