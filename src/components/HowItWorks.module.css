@@ -72,6 +72,19 @@
   color: var(--text-muted);
 }
 
+.points {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.point { display: flex; flex-direction: column; gap: 2px; }
+.pointTitle { font-weight: 700; font-size: 15px; }
+.pointBody { font-size: 15px; color: var(--text-muted); }
+
 .visual { min-width: 0; }
 
 @media (min-width: 900px) {

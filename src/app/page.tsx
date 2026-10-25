@@ -4,7 +4,6 @@ import PollRow from "@/components/PollRow";
 import HowItWorks from "@/components/HowItWorks";
 import Regions from "@/components/Regions";
 import QuizTeaser from "@/components/QuizTeaser";
-import Studio from "@/components/Studio";
 import Pricing from "@/components/Pricing";
 import Faq from "@/components/Faq";
 import Waitlist from "@/components/Waitlist";
@@ -13,7 +12,7 @@ import Band, { BandGap } from "@/components/Band";
 
 // Rhythm: light sheets alternate with the dark ground so the page flows.
 // hero (dark) → poll (light) → how it works (dark) → brain map (light)
-// → quiz, studio (dark) → pricing, FAQ (light) → waitlist (dark)
+// → quiz (dark) → pricing, FAQ (light) → waitlist (dark)
 export default function Home() {
   return (
     <>
@@ -30,7 +29,6 @@ export default function Home() {
         </Band>
         <BandGap />
         <QuizTeaser />
-        <Studio />
         <Band>
           <Pricing />
           <Faq />

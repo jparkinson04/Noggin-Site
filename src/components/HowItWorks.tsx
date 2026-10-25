@@ -3,7 +3,14 @@ import { BrainMock, CalendarMock, StudioMock, VoiceNoteMock } from "./FeatureMoc
 import shared from "./shared.module.css";
 import styles from "./HowItWorks.module.css";
 
-const steps = [
+const steps: {
+  num: string;
+  title: string;
+  body: string;
+  visual: React.ReactNode;
+  label: string;
+  points?: { title: string; body: string }[];
+}[] = [
   {
     num: "01",
     title: "Talk it through",
@@ -23,7 +30,21 @@ const steps = [
     title: "Studio picks what’s worth saying",
     body: "Each week it suggests what to post and why, from what you’ve already told it. Let Studio draft it from your own words and phrases, or dig into your noggin and write it yourself.",
     visual: <StudioMock />,
-    label: "Illustration: a Studio suggestion with options to draft it or write it yourself",
+    label: "Illustration: a draft with each line traced back to the region of the brain it came from",
+    points: [
+      {
+        title: "Your material only",
+        body: "Every draft is built from stories, opinions and proof you’ve actually given it. Nothing invented.",
+      },
+      {
+        title: "Your phrases",
+        body: "It picks up the way you talk: the words you reach for, and the ones you’d never use.",
+      },
+      {
+        title: "Away from the template",
+        body: "No hook, line break, line break, lesson. Posts read like a person wrote them, because one did the thinking.",
+      },
+    ],
   },
   {
     num: "04",
@@ -52,6 +73,16 @@ export default function HowItWorks() {
               <span className={styles.num}>{s.num}</span>
               <h3 className={styles.title}>{s.title}</h3>
               <p className={styles.body}>{s.body}</p>
+              {s.points && (
+                <ul className={styles.points}>
+                  {s.points.map((p) => (
+                    <li key={p.title} className={styles.point}>
+                      <span className={styles.pointTitle}>{p.title}</span>
+                      <span className={styles.pointBody}>{p.body}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
             <div className={styles.visual}>
               <ProductFrame label={s.label}>{s.visual}</ProductFrame>

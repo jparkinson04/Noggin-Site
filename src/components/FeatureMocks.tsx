@@ -4,35 +4,40 @@ import styles from "./FeatureMocks.module.css";
 // Illustrations of each How it works step. Sample content only; replace with
 // product screenshots when they exist.
 
-const WAVE = [6, 10, 16, 22, 14, 9, 18, 26, 20, 12, 8, 15, 24, 28, 19, 11, 7, 13, 21, 17, 10, 6, 12, 18, 14, 9, 5, 8];
 
 export function VoiceNoteMock() {
   return (
     <div className={styles.stack}>
       <span className={styles.meta}>Deep dive · Question 4 of 12</span>
-      <div className={`${styles.card} ${styles.question}`}>
+      <div className={`${styles.card} ${styles.question} ${styles.questionLg}`}>
         What do you find yourself explaining to clients again and again?
       </div>
-      <div className={styles.voice}>
-        <span className={styles.play}>
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="#fff" /></svg>
+      <div className={styles.voiceRow}>
+        <span className={`${styles.voice} ${styles.voicePill}`}>
+          <span className={styles.play}>
+            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="#fff" /></svg>
+          </span>
+          <span className={styles.voiceText}>Voice note · 1:42</span>
         </span>
-        <span className={styles.wave}>
-          {WAVE.map((h, i) => (
-            <span key={i} className={`${styles.bar} ${i > 17 ? styles.barFaint : ""}`} style={{ height: h }} />
-          ))}
-        </span>
-        <span className={styles.time}>1:42</span>
+        <span className={styles.meta}>transcribed as you spoke</span>
       </div>
-      <p className={styles.transcript}>“Honestly, it’s always the same thing. They think the problem is the website…”</p>
-      <div className={styles.recordRow}>
-        <span className={styles.mic}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
-            <rect x="5.5" y="1.5" width="5" height="8.5" rx="2.5" />
-            <path d="M3 7.5a5 5 0 0 0 10 0M8 12.5v2" />
-          </svg>
+      <p className={styles.answer}>
+        “Honestly, it’s always the same thing. They think the problem is the website. The website’s
+        fine. The problem is nobody in the building can say what they’re for in one sentence, so the
+        website can’t either. I end up doing that sentence for them before we touch a pixel.”
+      </p>
+      <div className={styles.savedTo}>
+        <span className={styles.meta}>Saved to</span>
+        <span className={styles.chip}>
+          <span className={styles.chipDot} style={{ background: "var(--region-opinions)" }} />Opinions
         </span>
-        <span className={styles.meta}>Hold to record, or type your answer</span>
+        <span className={styles.chip}>
+          <span className={styles.chipDot} style={{ background: "var(--region-receipts)" }} />Receipts
+        </span>
+      </div>
+      <div className={styles.followUp}>
+        <span className={styles.followLabel}>Follow-up</span>
+        <span className={styles.followText}>Who was the last client that happened with?</span>
       </div>
     </div>
   );
@@ -55,40 +60,65 @@ export function BrainMock() {
   );
 }
 
+// A phrase in the draft that traces back to a region of the brain.
+function From({ region, children }: { region: "whys" | "stories" | "opinions" | "receipts"; children: React.ReactNode }) {
+  return (
+    <span className={styles.from} style={{ textDecorationColor: `var(--region-${region})` }}>
+      {children}
+    </span>
+  );
+}
+
+const KEY = [
+  { region: "whys", label: "From your whys" },
+  { region: "stories", label: "From a story" },
+  { region: "opinions", label: "From an opinion" },
+  { region: "receipts", label: "From a receipt" },
+];
+
 export function StudioMock() {
   return (
     <div className={styles.stack}>
-      <div className={styles.card}>
-        <div className={styles.stack} style={{ gap: 10 }}>
-          <span className={styles.eyebrow}>Worth posting this week</span>
-          <div className={styles.question}>The client who came back</div>
-          <p className={styles.why} style={{ margin: 0 }}>
-            You haven’t told a story in a while, and this one has a lesson people in your field will recognise.
-          </p>
-          <div className={styles.chips}>
-            <span className={styles.chip}>
-              <span className={styles.chipDot} style={{ background: "var(--region-stories)" }} />Stories
+      <div className={styles.draftHead}>
+        <span className={styles.eyebrow}>Worth posting this week</span>
+        <span className={styles.meta}>Draft, waiting for you</span>
+      </div>
+      <div className={`theme-light ${styles.draftCard}`}>
+        <p className={styles.draftPara}>
+          They fired us in March. <From region="stories">Fair enough, we’d earned it.</From> Six months
+          later they rang back, and what changed in between is the bit worth sharing.
+        </p>
+        <p className={styles.draftPara}>
+          We’d been treating them like a ticket queue.{" "}
+          <From region="opinions">
+            The website was fine. Nobody in the building could say what they were for in one sentence,
+            so the website couldn’t either.
+          </From>{" "}
+          We built pages. They needed the sentence.
+        </p>
+        <p className={styles.draftPara}>
+          <From region="receipts">
+            The first call back was forty minutes and they didn’t mention the website once.
+          </From>{" "}
+          That’s the job now.{" "}
+          <From region="whys">I started on my own so clients would stop being treated as an interruption,</From>{" "}
+          and it took losing one to remember it.
+        </p>
+        <div className={styles.keyRow}>
+          {KEY.map((k) => (
+            <span key={k.region} className={styles.keyItem}>
+              <span className={styles.keyBar} style={{ background: `var(--region-${k.region})` }} />
+              {k.label}
             </span>
-            <span className={styles.chip}>
-              <span className={styles.chipDot} style={{ background: "var(--region-receipts)" }} />Receipts
-            </span>
-          </div>
-          <div className={styles.actions}>
-            <span className={styles.btn}>Draft it with Studio</span>
-            <span className={styles.btnGhost}>Write it myself</span>
-          </div>
+          ))}
         </div>
       </div>
-      <p className={styles.draft} style={{ margin: 0 }}>
-        They fired us in March. <span className={styles.yours}>Fair enough, we’d earned it.</span> Six months
-        later they rang back, and what changed in between is the bit worth sharing…
-      </p>
-      <div className={styles.search}>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
-          <circle cx="6" cy="6" r="4.5" />
-          <path d="M9.5 9.5L13 13" />
-        </svg>
-        Dig into your noggin: stories, opinions, receipts…
+      <div className={styles.draftFoot}>
+        <div className={styles.actions}>
+          <span className={styles.btn}>Draft it with Studio</span>
+          <span className={styles.btnGhost}>Write it myself</span>
+        </div>
+        <span className={styles.meta}>Every line traces back to something you said.</span>
       </div>
     </div>
   );

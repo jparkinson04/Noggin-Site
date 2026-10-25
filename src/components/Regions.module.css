@@ -69,16 +69,27 @@
   flex-direction: column;
 }
 
+/* One region per row: the region on the left, an example card on the right. */
 .row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px 32px;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+.list li:last-child { border-bottom: 1px solid var(--line); }
+
+.region {
   width: 100%;
   font: inherit;
   color: inherit;
   text-align: left;
   background: none;
   border: 0;
-  border-top: 1px solid var(--line);
-  border-radius: 0;
-  padding: 20px 12px;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 0 -12px;
   min-height: 44px;
   display: flex;
   gap: 18px;
@@ -86,10 +97,9 @@
   cursor: pointer;
   transition: background 0.15s ease;
 }
-.list li:last-child .row { border-bottom: 1px solid var(--line); }
-.row:hover { background: var(--surface-hover); }
-.rowOn { background: var(--surface); }
-.rowOn .dot { transform: translateY(1px) scale(1.35); }
+.region:hover { background: var(--surface-hover); }
+.regionOn { background: var(--surface); }
+.regionOn .dot { transform: translateY(1px) scale(1.35); }
 
 .dot {
   flex: none;
@@ -102,16 +112,13 @@
 
 .text {
   display: flex;
-  flex-wrap: wrap;
-  gap: 4px 24px;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 6px;
   flex: 1;
   min-width: 0;
 }
 
 .name {
-  flex: 0 0 140px;
-  font-family: var(--font-display), system-ui, sans-serif;
   font-weight: 600;
   font-size: 22px;
   letter-spacing: -0.02em;
@@ -119,22 +126,43 @@
 }
 
 .line {
-  flex: 1 1 220px;
   color: var(--text-muted);
   font-size: 16px;
+}
+
+/* The example card: white, the card border and radius, a bar in the region colour. */
+.example {
+  margin: 0;
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: 18px 22px;
+}
+.bar { flex: none; width: 3px; border-radius: 2px; }
+.exampleText { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.quote {
+  margin: 0;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.caption {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 @media (min-width: 900px) {
   .section {
     grid-template-columns: 1fr 1.05fr;
-    grid-template-areas: "head brain" "list brain";
-    grid-template-rows: auto 1fr;
+    grid-template-areas: "head brain" "list list";
+    grid-template-rows: auto auto;
     column-gap: clamp(40px, 6vw, 80px);
-    row-gap: 32px;
+    row-gap: 48px;
   }
-  .brainPanel {
-    align-self: center;
-    position: sticky;
-    top: 24px;
-  }
+  .row { grid-template-columns: 5fr 7fr; }
 }

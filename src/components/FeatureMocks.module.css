@@ -24,18 +24,26 @@
   letter-spacing: -0.01em;
 }
 
-/* 1. Voice note */
-.voice {
-  align-self: flex-end;
+/* 1. Voice note, as a transcript */
+.questionLg { font-size: 20px; }
+
+.voiceRow {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 10px 14px;
+}
+.voice {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background: var(--accent);
   color: #fff;
-  border-radius: 18px 18px 6px 18px;
-  padding: 10px 14px;
-  width: min(100%, 300px);
+  border-radius: var(--radius-pill);
+  padding: 8px 14px 8px 8px;
 }
+.voicePill { align-self: flex-start; }
+.voiceText { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .play {
   flex: none;
   width: 30px;
@@ -45,52 +53,38 @@
   display: grid;
   place-items: center;
 }
-.wave {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  height: 28px;
-}
-.bar {
-  flex: 1;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.85);
-}
-.barFaint { background: rgba(255, 255, 255, 0.4); }
-.time { font-size: 12px; font-variant-numeric: tabular-nums; }
 
-.transcript {
-  align-self: flex-end;
-  max-width: 300px;
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--text-muted);
+.answer {
+  margin: 0;
+  padding-left: 14px;
+  border-left: 3px solid var(--line);
   font-style: italic;
-  text-align: right;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-strong);
 }
 
-.recordRow {
+.savedTo {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
-  padding-top: 6px;
+  gap: 8px;
 }
-.mic {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--line-strong);
-  display: grid;
-  place-items: center;
-  color: var(--text);
+
+.followUp {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
 }
-.recDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
+.followLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-text);
 }
+.followText { font-size: 14px; color: var(--text-strong); }
 
 /* 2. Brain */
 .brainWrap { padding: 4px 8px 0; }
@@ -121,7 +115,6 @@
   text-transform: uppercase;
   color: var(--accent-text);
 }
-.why { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip {
   display: inline-flex;
@@ -146,26 +139,58 @@
 .btn { background: var(--accent); color: #fff; }
 .btnGhost { border: 1px solid var(--line-strong); color: var(--text-strong); }
 
-.draft {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--text-strong);
-}
-.yours {
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-}
-.search {
+/* The annotated draft: a white sheet inside the dark frame. */
+.draftHead {
   display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+}
+.draftCard {
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-card);
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 1px 2px rgba(17, 18, 22, 0.08), 0 24px 48px -24px rgba(17, 18, 22, 0.45);
+}
+.draftPara {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.from {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+.keyRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.keyItem {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: var(--text-faint);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-pill);
-  padding: 9px 14px;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.keyBar { width: 18px; height: 3px; border-radius: 2px; }
+.draftFoot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+@media (max-width: 480px) {
+  .draftCard { padding: 24px 22px; }
 }
 
 /* 4. Calendar */
