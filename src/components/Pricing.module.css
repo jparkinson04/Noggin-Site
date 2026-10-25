@@ -56,19 +56,21 @@
 
 .per { color: var(--text-muted); }
 
-.founding {
+.alt {
   margin: 0;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.founding {
+  margin: 8px 0 0;
   font-size: 15px;
   color: var(--accent-text);
 }
 
-.later {
-  margin: 0;
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 40px;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+.minimum {
+  margin: 8px 0 0;
+  font-size: 15px;
   color: var(--text-muted);
 }
 
