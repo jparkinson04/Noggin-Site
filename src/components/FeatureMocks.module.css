@@ -3,6 +3,14 @@
 
 .stack { display: flex; flex-direction: column; gap: 14px; }
 
+/* Parts of a picture that arrive in order once it's on screen. Only once JS has
+   armed the stack are they hidden, so the server markup is the finished state. */
+.reveal {
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.armed .reveal { opacity: 0; transform: translateY(8px); }
+.armed.in .reveal { opacity: 1; transform: none; }
+
 .meta {
   font-size: 12px;
   color: var(--text-faint);
@@ -162,11 +170,21 @@
   font-size: 18px;
   line-height: 1.6;
 }
+/* The underline is a background that draws in from the left, in the region's colour.
+   Hovering the key fades every phrase but that region's. */
 .from {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
+  --u: currentColor;
+  background-image: linear-gradient(var(--u), var(--u));
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-position: 0 calc(100% + 1px);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-size 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.25s ease;
 }
+.armed .from { background-size: 0% 2px; }
+.armed.in .from { background-size: 100% 2px; }
+.fromDim { opacity: 0.35; }
 .keyRow {
   display: flex;
   flex-wrap: wrap;
@@ -180,7 +198,10 @@
   gap: 8px;
   font-size: 12px;
   color: var(--text-muted);
+  cursor: default;
+  transition: color 0.2s ease;
 }
+.keyItemOn { color: var(--text); }
 .keyBar { width: 18px; height: 3px; border-radius: 2px; }
 .draftFoot {
   display: flex;

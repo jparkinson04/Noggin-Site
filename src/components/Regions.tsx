@@ -32,7 +32,8 @@ const examples: Record<RegionId, { quote: React.ReactNode; caption: string }> = 
 
 export default function Regions() {
   const [active, setActive] = useState<RegionId | null>(null);
-  const current = regions.find((r) => r.id === active);
+  const [hovered, setHovered] = useState<RegionId | null>(null);
+  const current = regions.find((r) => r.id === (hovered ?? active));
 
   return (
     <section className={`${shared.section} ${styles.section}`}>
@@ -48,7 +49,7 @@ export default function Regions() {
 
       <div className={`theme-dark ${styles.brainPanel}`}>
         <div className={styles.brainBox}>
-          <BrainMap highlight={active} />
+          <BrainMap highlight={hovered ?? active} />
           {current && (
             <span
               className={styles.label}
@@ -76,6 +77,10 @@ export default function Regions() {
                 className={`${styles.region} ${on ? styles.regionOn : ""}`}
                 aria-pressed={on}
                 onClick={() => setActive(on ? null : r.id)}
+                onMouseEnter={() => setHovered(r.id)}
+                onMouseLeave={() => setHovered(null)}
+                onFocus={() => setHovered(r.id)}
+                onBlur={() => setHovered(null)}
               >
                 <span className={styles.dot} style={{ background: r.colour }} aria-hidden="true" />
                 <span className={styles.text}>
