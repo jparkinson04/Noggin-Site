@@ -16,6 +16,7 @@ export default function Hero() {
             opinions into posts that sound like you on a good day.
           </p>
           <a href="#waitlist" className={`${shared.btnPrimary} ${styles.cta}`}>Join the waitlist</a>
+          <p className={styles.note}>Waitlist members lock in £19 a month for life, instead of £29.</p>
         </div>
       </div>
     </section>

@@ -8,7 +8,10 @@ export default function Waitlist() {
       <div className={styles.panel}>
         <div className={styles.copy}>
           <h2 className={styles.h2}>Get your noggin in early.</h2>
-          <p className={styles.lede}>Join the waitlist for first access and the founding member rate.</p>
+          <p className={styles.lede}>
+            Join the waitlist for first access and the founding rate: £19 a month, locked for life,
+            instead of £29.
+          </p>
         </div>
         <div className={styles.formWrap}>
           <form className={styles.form}>
