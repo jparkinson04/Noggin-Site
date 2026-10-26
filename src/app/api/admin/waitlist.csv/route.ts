@@ -1,5 +1,8 @@
 import { supabaseAdmin } from "@/lib/supabase-admin";
 
+// Read at request time, never at build time: the keys only exist on the server.
+export const dynamic = "force-dynamic";
+
 const cell = (v: unknown) => {
   const s = v === null || v === undefined ? "" : String(v);
   return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
