@@ -36,6 +36,10 @@ export default function Logo({ href = "#top", label = "Noggin home", height = 38
         aria-hidden="true"
         focusable="false"
       >
+        {/* A small "HEY" over the n. Live type, not outlined, so it picks up the site's body font. */}
+        <text x="279" y="-600" textAnchor="middle" className={styles.hey}>
+          HEY
+        </text>
         <g className={styles.letters}>
           {LETTERS.map((d, i) => (
             <path key={i} d={d} />

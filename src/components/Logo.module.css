@@ -11,3 +11,12 @@
 /* logo-dark.svg uses #ecebe6 ("chalk") for the letters; --text is the site's equivalent. */
 .letters { fill: var(--text); }
 .brain { fill: var(--brand); }
+
+/* Sized in the wordmark's own units: about a quarter of the x-height, tracked out, in the brand colour. */
+.hey {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 150px;
+  letter-spacing: 0.12em;
+  fill: var(--brand);
+}
