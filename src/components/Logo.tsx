@@ -38,7 +38,7 @@ export default function Logo({ href = "#top", label = "Noggin home", height = 38
       >
         {/* A small "HEY" over the n. Live type, not outlined, so it picks up the site's body font. */}
         {/* Starts on the n's left edge (x 39) and is spaced out to its right edge (x 519), so the two line up. */}
-        <text x="39" y="-615" textLength="480" lengthAdjust="spacing" className={styles.hey}>
+        <text x="39" y="-625" textLength="480" lengthAdjust="spacing" className={styles.hey}>
           HEY
         </text>
         <g className={styles.letters}>
