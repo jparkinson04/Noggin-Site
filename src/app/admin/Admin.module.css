@@ -1,0 +1,60 @@
+/* Admin: plain, dark, the site's tokens. Nobody but us sees it. */
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 48px var(--gutter) 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.h1 { font-weight: 700; font-size: 32px; letter-spacing: -0.03em; }
+
+.count { color: var(--text-muted); font-size: 16px; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.table th { color: var(--text-faint); font-weight: 500; font-size: 13px; }
+.table td { color: var(--text-strong); }
+.muted { color: var(--text-muted); }
+
+.empty { color: var(--text-muted); }
+
+.signIn {
+  max-width: 420px;
+  margin: 15vh auto 0;
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.label { font-size: 14px; color: var(--text-muted); }
+.input {
+  font: inherit;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--text);
+}
+.error { margin: 0; color: var(--text); font-size: 15px; }
